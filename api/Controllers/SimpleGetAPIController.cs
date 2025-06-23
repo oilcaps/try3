@@ -1,5 +1,7 @@
+using DatabaseAccessController;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SDP_EntityModels;
 using System.Data;
 
 namespace api.Controllers;
@@ -48,6 +50,4 @@ public class SimpleGetAPIController : ControllerBase
             return StatusCode(500, $"API ¸üÐÂåeÕ`: {ex.Message}");
         }
     }
-}
-}
-
+    }   

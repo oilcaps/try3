@@ -66,5 +66,10 @@ namespace AfterServiceApp
             dataGridViewReport.Columns[1].HeaderText = "Number of Cases";
             dataGridViewReport.AutoResizeColumns();
         }
+
+        private void dataGridViewReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
