@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAccessController", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDP_EntityModels", "SDP_EntityModels\SDP_EntityModels.csproj", "{CB50A1DC-7DA4-4419-820E-8487DA898BEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory", "Inventory\Inventory.csproj", "{C3A3663C-F7A3-4D3A-BDA3-6FA190DFCB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "After-Service Management", "After-Service Management\After-Service Management.csproj", "{DADDD725-96B7-47B4-BFD9-AC24247AE27A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{CB50A1DC-7DA4-4419-820E-8487DA898BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB50A1DC-7DA4-4419-820E-8487DA898BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB50A1DC-7DA4-4419-820E-8487DA898BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A3663C-F7A3-4D3A-BDA3-6FA190DFCB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A3663C-F7A3-4D3A-BDA3-6FA190DFCB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A3663C-F7A3-4D3A-BDA3-6FA190DFCB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A3663C-F7A3-4D3A-BDA3-6FA190DFCB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADDD725-96B7-47B4-BFD9-AC24247AE27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADDD725-96B7-47B4-BFD9-AC24247AE27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADDD725-96B7-47B4-BFD9-AC24247AE27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADDD725-96B7-47B4-BFD9-AC24247AE27A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
