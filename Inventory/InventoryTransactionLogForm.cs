@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Inventory.InventoryTransactionService;
+
 
 public partial class InventoryTransactionLogForm : Form
 {
@@ -20,11 +22,11 @@ public partial class InventoryTransactionLogForm : Form
 
     private async void InventoryTransactionLogForm_Load(object sender, EventArgs e)
     {
-        // 設定交易類型 ComboBox 選項
+
         cmbTransactionType.Items.AddRange(new string[] { "All", "IN", "OUT", "ADJUST", "DAMAGE" });
         cmbTransactionType.SelectedIndex = 0;
 
-        // 預設日期區間（最近30天）
+ 
         dtpFrom.Value = DateTime.Today.AddDays(-30);
         dtpTo.Value = DateTime.Today;
 
@@ -124,7 +126,7 @@ public partial class InventoryTransactionLogForm : Form
 
     private void btnExportCSV_Click(object sender, EventArgs e)
     {
-        // 簡單匯出 CSV 範例
+
         if (dgvTransactions.Rows.Count == 0)
         {
             MessageBox.Show("No data to export.");

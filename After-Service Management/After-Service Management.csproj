@@ -66,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AfterServiceForm.resx">
+      <DependentUpon>AfterServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AfterServiceListForm.resx">
       <DependentUpon>AfterServiceListForm.cs</DependentUpon>
     </EmbeddedResource>

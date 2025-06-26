@@ -93,5 +93,10 @@ namespace AfterServiceApp
             cmbStatus.SelectedIndex = -1;
             LoadServiceList();
         }
+
+        private void AfterServiceListForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -122,6 +122,7 @@
             this.Controls.Add(this.dgvServiceList);
             this.Name = "AfterServiceListForm";
             this.Text = "After-Service Records";
+            this.Load += new System.EventHandler(this.AfterServiceListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServiceList)).EndInit();
             this.ResumeLayout(false);
 

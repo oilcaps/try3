@@ -14,7 +14,7 @@ namespace YourNamespace
 {
     public partial class CustomerFeedbackForm : Form
     {
-        // 請自行修改成你的資料庫連線字串
+
         private string connectionString = @"Server=YOUR_SERVER;Database=YOUR_DB;Trusted_Connection=True;";
 
         public CustomerFeedbackForm()

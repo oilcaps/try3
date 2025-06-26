@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,55 +10,69 @@ namespace InventoryApp
 {
     public partial class InventoryViewForm : Form
     {
-        private string connectionString = @"YourConnectionStringHere";
+        private readonly HttpClient _httpClient;
+        private List<InventoryModel> _inventoryList;
 
         public InventoryViewForm()
         {
             InitializeComponent();
-            LoadInventory();
+
+            _httpClient = new HttpClient();
+            _httpClient.BaseAddress = new Uri("http://localhost:5000/");  
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        private void LoadInventory()
+        private async void InventoryViewForm_Load(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            await LoadInventoryAsync();
+        }
+
+        private async Task LoadInventoryAsync(string keyword = "")
+        {
+            try
             {
-                conn.Open();
-                var adapter = new SqlDataAdapter(
-                    "SELECT p.ProductName, i.Quantity AS StockQty, i.LastUpdated " +
-                    "FROM Inventory i INNER JOIN Product p ON i.ProductID = p.ProductID", conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvInventory.DataSource = dt;
+                string url = "api/Inventory/GetAll";
+
+                if (!string.IsNullOrWhiteSpace(keyword))
+                {
+
+                    url += $"?search={Uri.EscapeDataString(keyword)}";
+                }
+
+                HttpResponseMessage response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string json = await response.Content.ReadAsStringAsync();
+                _inventoryList = JsonConvert.DeserializeObject<List<InventoryModel>>(json);
+
+                dgvInventory.DataSource = _inventoryList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load inventory: " + ex.Message);
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                var adapter = new SqlDataAdapter(
-                    "SELECT p.ProductName, i.Quantity AS StockQty, i.LastUpdated " +
-                    "FROM Inventory i INNER JOIN Product p ON i.ProductID = p.ProductID " +
-                    "WHERE p.ProductName LIKE @keyword", conn);
-                adapter.SelectCommand.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dgvInventory.DataSource = dt;
-            }
+            await LoadInventoryAsync(keyword);
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private async void btnRefresh_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
-            LoadInventory();
+            await LoadInventoryAsync();
         }
+    }
 
-        private void InventoryViewForm_Load(object sender, EventArgs e)
-        {
-
-        }
+    public class InventoryModel
+    {
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+        public DateTime LastUpdated { get; set; }
     }
 }
