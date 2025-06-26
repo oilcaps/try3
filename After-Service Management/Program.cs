@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AfterServiceApp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace After_Service_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AfterServiceListForm());
+            Application.Run(new AfterServiceForm());
         }
     }
 }

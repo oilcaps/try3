@@ -81,7 +81,7 @@
             this.grpFeedbackType.Controls.Add(this.radioProductIssue);
             this.grpFeedbackType.Location = new System.Drawing.Point(12, 95);
             this.grpFeedbackType.Name = "grpFeedbackType";
-            this.grpFeedbackType.Size = new System.Drawing.Size(360, 70);
+            this.grpFeedbackType.Size = new System.Drawing.Size(373, 70);
             this.grpFeedbackType.TabIndex = 4;
             this.grpFeedbackType.TabStop = false;
             this.grpFeedbackType.Text = "Feedback Type";
@@ -90,7 +90,7 @@
             // 
             this.radioOther.AutoSize = true;
             this.radioOther.Checked = true;
-            this.radioOther.Location = new System.Drawing.Point(292, 30);
+            this.radioOther.Location = new System.Drawing.Point(300, 30);
             this.radioOther.Name = "radioOther";
             this.radioOther.Size = new System.Drawing.Size(68, 19);
             this.radioOther.TabIndex = 2;
@@ -159,7 +159,7 @@
             // 
             // CustomerFeedbackForm
             // 
-            this.ClientSize = new System.Drawing.Size(384, 371);
+            this.ClientSize = new System.Drawing.Size(423, 396);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtComments);
@@ -171,6 +171,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "CustomerFeedbackForm";
             this.Text = "Customer Feedback";
+            this.Load += new System.EventHandler(this.CustomerFeedbackForm_Load);
             this.grpFeedbackType.ResumeLayout(false);
             this.grpFeedbackType.PerformLayout();
             this.ResumeLayout(false);

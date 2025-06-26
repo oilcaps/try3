@@ -90,5 +90,10 @@ namespace YourNamespace
             radioOther.Checked = true;
             txtComments.Clear();
         }
+
+        private void CustomerFeedbackForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

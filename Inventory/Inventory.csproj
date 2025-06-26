@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryTransactionLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryTransactionLogForm.Designer.cs">
+      <DependentUpon>InventoryTransactionLogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InventoryTransactionLogForm.resx">
+      <DependentUpon>InventoryTransactionLogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryViewForm.resx">
       <DependentUpon>InventoryViewForm.cs</DependentUpon>
     </EmbeddedResource>
