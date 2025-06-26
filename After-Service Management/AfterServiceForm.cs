@@ -128,5 +128,10 @@ namespace AfterServiceApp
             cmbStatus.SelectedIndex = -1;
             txtDetails.Clear();
         }
+
+        private void AfterServiceForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

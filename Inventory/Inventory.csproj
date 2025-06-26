@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.7.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalCoreSDK.1.7.1\lib\net451\PayPalCoreSDK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryTransactionService.cs" />
+    <Compile Include="InboundRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InboundRecordForm.Designer.cs">
+      <DependentUpon>InboundRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryTransactionLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InboundRecordForm.resx">
+      <DependentUpon>InboundRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryTransactionLogForm.resx">
       <DependentUpon>InventoryTransactionLogForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +100,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\api\api.csproj">
+      <Project>{4a5d9491-e4f1-4ba1-aad4-3a4af4703008}</Project>
+      <Name>api</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
