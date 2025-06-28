@@ -76,7 +76,7 @@
             this.Controls.Add(this.dgvInventory);
             this.Name = "InventoryViewForm";
             this.Text = "Inventory View";
-            this.Load += new System.EventHandler(this.InventoryViewForm_Load_1);
+            this.Load += new System.EventHandler(this.InventoryViewForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
