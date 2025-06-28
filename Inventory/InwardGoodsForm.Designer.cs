@@ -10,13 +10,11 @@
         private System.Windows.Forms.DateTimePicker dtpInboundDate;
         private System.Windows.Forms.TextBox txtReference;
         private System.Windows.Forms.TextBox txtInboundRecordID;
-
         private System.Windows.Forms.Label lblInboundRecordID;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblInboundDate;
         private System.Windows.Forms.Label lblReference;
-
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
@@ -78,31 +76,24 @@
             // numQuantity
             // 
             this.numQuantity.Location = new System.Drawing.Point(161, 348);
-            this.numQuantity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.numQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numQuantity.Name = "numQuantity";
             this.numQuantity.Size = new System.Drawing.Size(150, 25);
             this.numQuantity.TabIndex = 6;
-            this.numQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.numQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // dtpInboundDate
             // 
             this.dtpInboundDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInboundDate.Location = new System.Drawing.Point(450, 275);
+            this.dtpInboundDate.Location = new System.Drawing.Point(459, 273);
             this.dtpInboundDate.Name = "dtpInboundDate";
             this.dtpInboundDate.Size = new System.Drawing.Size(150, 25);
             this.dtpInboundDate.TabIndex = 8;
+            this.dtpInboundDate.ValueChanged += new System.EventHandler(this.dtpInboundDate_ValueChanged);
             // 
             // txtReference
             // 
-            this.txtReference.Location = new System.Drawing.Point(450, 312);
+            this.txtReference.Location = new System.Drawing.Point(459, 312);
             this.txtReference.Name = "txtReference";
             this.txtReference.Size = new System.Drawing.Size(150, 25);
             this.txtReference.TabIndex = 10;
@@ -214,7 +205,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
     }
 }
